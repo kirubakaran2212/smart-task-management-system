@@ -29,7 +29,7 @@ pipeline {
                             ${scannerHome}/bin/sonar-scanner \
                             -Dsonar.projectKey=Smart-Task-Management-system \
                             -Dsonar.sources=src \
-                            -Dsonar.sourceEncoding=UTF-8
+                            -Dsonar.sourceEncoding=UTF-8 \
                             -Dsonar.javascript.node.maxspace=4096
                         """
                     }
