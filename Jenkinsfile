@@ -30,18 +30,19 @@ pipeline {
                             -Dsonar.projectKey=Smart-Task-Management-system \
                             -Dsonar.sources=src \
                             -Dsonar.sourceEncoding=UTF-8
+                            -Dsonar.javascript.node.maxspace=4096
                         """
                     }
                 }
             }
         }
-       stage('Quality Gate') {
+        stage('Quality Gate') {
            steps {
                timeout(time: 5, unit: 'MINUTES') {
                    waitForQualityGate abortPipeline: true
+                }
             }
         }
-    }
 
         stage('Build Frontend') {
             steps {
